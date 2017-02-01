@@ -1,0 +1,86 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo Formulario</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>Nombre:</td>
+			<td><input type="text" name="txt-nombre" id="txt-nombre" size="10" placeholder="Ejem. Juan"></td>
+		</tr>
+		<tr>
+			<td>Apellido:</td>
+			<td><input type="text" name="txt-nombre" id="txt-nombre" size="10" placeholder="Ejem. Perez"></td>
+		</tr>
+		<tr>
+			<td>Dirección:</td>
+			<td><textarea name="txta-direccion" id="txta-direccion" placeholder="Escriba la direccion completa"></textarea></td>
+		</tr>
+		<tr>
+			<td>Género:</td>
+			<td> 
+				<label>Femenino<input type="radio" name="rbt-genero" id="rbt-femenino"></label>&nbsp;&nbsp;&nbsp;
+				<label>Masculino<input type="radio" name="rbt-genero" id="rbt-masculino"></label>
+			</td>
+		</tr>
+		<tr>
+			<td>Titulos:</td>
+			<td>
+				<label>Maestria<input type="checkbox" name="chk_maestria" id="chk_maestria"></label>
+				<label>Pregrado<input type="checkbox" name="chk_pregrado" id="chk_pregrado"></label>
+				<label>Doctorado<input type="checkbox" name="chk_doctorado" id="chk_doctorado"></label>
+				<label>Especializacion<input type="checkbox" name="chk_especializacion" id="chk_especializacion"></label>
+			</td>
+		</tr>
+		<tr>
+			<td>Pais:</td>
+			<td>
+				<select name="slc-pais" id="slc-pais">
+					<option>---Seleccione un país---</option>
+					<option value="1">Honduras</option>
+					<option value="2">Guatemala</option>
+					<option value="3">Panama</option>
+					<option value="4">Costarica</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Experiencias:</td>
+			<td>
+				<select name="slc-pais" id="slc-pais" multiple>
+					<option value="1">Liderazgo</option>
+					<option value="2">Productividad</option>
+					<option value="3">Honradez</option>
+					<option value="4">Trabajo en equipo</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Fecha de nacimiento: </td>
+			<td><input type="date" name="dt-fecha-nacimiento" id="dt-fecha-nacimiento"></td>
+		</tr>
+		<tr>
+			<td>Email:</td>
+			<td><input type="email" name="txt-email" id="txt-email" placeholder="ejemplo@email.com"></td>
+		</tr>
+		<tr>
+			<td>Password:</td>
+			<td><input type="password" name="txt-password" id="txt-password" placeholder="Password"></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="Guardar" name="btn-guardar" id="btn-guardar"><!-- Se utiliza para enviar formularios completos, es necesario utilizar la etiqueta <form> -->
+				<input type="button" value="Guardar" name="btn-guardar-2" id="btn-guardar-2"><!-- Se utiliza para agregar acciones o eventos javascript -->
+				<button name="btn-guardar-3" id="btn-guardar-3">Guardar</button><!-- Se utiliza para agregar acciones o eventos javascript -->
+			</td>
+		</tr>
+	</table>
+	<ul> 
+		<li><a href="http://google.hn">OpcionMenu1</a></li>
+		<li><a href="http://google.hn">OpcionMenu2</a></li>
+		<li><a href="http://google.hn">OpcionMenu3</a></li>
+		<li><a href="http://google.hn">OpcionMenu4</a></li>
+	</ul>
+</body>
+</html>

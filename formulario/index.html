@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo Formulario</title>
+</head>
+<body>
+	Nombre: <input type="text" name="txt-nombre" id="txt-nombre" size="10" placeholder="Ejem. Juan"><br><br>
+	Apellido: <input type="text" name="txt-nombre" id="txt-nombre" size="10" placeholder="Ejem. Perez"><br><br>
+	Dirección: <textarea name="txta-direccion" id="txta-direccion" placeholder="Escriba la direccion completa"></textarea><br><br>
+	<!-- el codigo &nbsp; imprime un espacio -->
+	Género: 
+		<label>Femenino<input type="radio" name="rbt-genero" id="rbt-femenino"></label>&nbsp;&nbsp;&nbsp;
+		<label>Masculino<input type="radio" name="rbt-genero" id="rbt-masculino"></label><br><br>
+	Titulos:
+		<label>Maestria<input type="checkbox" name="chk_maestria" id="chk_maestria"></label>
+		<label>Pregrado<input type="checkbox" name="chk_pregrado" id="chk_pregrado"></label>
+		<label>Doctorado<input type="checkbox" name="chk_doctorado" id="chk_doctorado"></label>
+		<label>Especializacion<input type="checkbox" name="chk_especializacion" id="chk_especializacion"></label><br><br>
+	Pais:
+		<select name="slc-pais" id="slc-pais">
+			<option>---Seleccione un país---</option>
+			<option value="1">Honduras</option>
+			<option value="2">Guatemala</option>
+			<option value="3">Panama</option>
+			<option value="4">Costarica</option>
+		</select><br><br>
+	Experiencias:<br>
+		<select name="slc-pais" id="slc-pais" multiple>
+			<option value="1">Liderazgo</option>
+			<option value="2">Productividad</option>
+			<option value="3">Honradez</option>
+			<option value="4">Trabajo en equipo</option>
+		</select><br><br>
+	Fecha de nacimiento: <input type="date" name="dt-fecha-nacimiento" id="dt-fecha-nacimiento"><br><br>
+	Email: <input type="email" name="txt-email" id="txt-email" placeholder="ejemplo@email.com"><br><br>
+	Password: <input type="password" name="txt-password" id="txt-password" placeholder="Password"><br><br>
+	Botones:
+	<input type="submit" value="Guardar" name="btn-guardar" id="btn-guardar"><!-- Se utiliza para enviar formularios completos, es necesario utilizar la etiqueta <form> -->
+	<input type="button" value="Guardar" name="btn-guardar-2" id="btn-guardar-2"><!-- Se utiliza para agregar acciones o eventos javascript -->
+	<button name="btn-guardar-3" id="btn-guardar-3">Guardar</button><!-- Se utiliza para agregar acciones o eventos javascript -->
+	<a href="formulario-tabla.html">Ver formulario en tabla</a>
+</body>
+</html>
