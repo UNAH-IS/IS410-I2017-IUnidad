@@ -2,80 +2,206 @@
 <head>
 	<meta charset="utf-8">
 	<title>Ejemplo Formulario</title>
+	<!--Usar fuentes de Google, para ello hay que incluir esta etiqueta link en la etiqueta head-->
+	<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+
+	<style>
+		/* Este es un comentario CSS */
+		/*Es posible aplicar estilos a etiquetas del mismo tipo 
+
+		nombre-etiqueta{
+			propiedad1:valor1;
+			propiedad2:valor2;
+			....
+			propiedadN:valorN;
+		}
+
+		*/
+
+		h1{
+			color:#ffffff;
+			background-color: rgba(0,0,0,0.5);
+			padding:40px;
+			margin:40px;
+			/*border:1px; border-color:#ffffff;border-style: solid;*/
+			border: 1px #ffffff solid;	
+		}
+
+
+		/*Es posible definir clases CSS para aplicar estilos especificos a ciertas etiquetas
+
+		.nombre-clase{
+			propiedad1:valor1;
+			propiedad2:valor2;
+			....
+			propiedadN:valorN;	
+		}
+		*/
+		.cuadro-transparente{
+			background-color: rgba(0,0,0,0.5); 
+			border:1px; border-color:#ffffff;
+			border-style: solid;
+			padding:50px;
+			margin:50px;
+			font-family: 'Shadows Into Light', cursive;
+		}
+
+		/*
+			Definir un estilo unico, esto se hace utilizando la propiedad id
+
+			#nombre-id{
+				propiedad1:valor1;
+				propiedad2:valor2;
+				....
+				propiedadN:valorN;	
+			}
+		*/
+		#div-formulario{
+			background-color: rgba(74, 16, 5,0.9); 
+			margin: 100px;
+			padding:50px; 
+			border:1px #922713 solid;
+		}
+
+	</style>
 </head>
-<body>
-	<table>
-		<tr>
-			<td>Nombre:</td>
-			<td><input type="text" name="txt-nombre" id="txt-nombre" size="10" placeholder="Ejem. Juan"></td>
-		</tr>
-		<tr>
-			<td>Apellido:</td>
-			<td><input type="text" name="txt-nombre" id="txt-nombre" size="10" placeholder="Ejem. Perez"></td>
-		</tr>
-		<tr>
-			<td>Dirección:</td>
-			<td><textarea name="txta-direccion" id="txta-direccion" placeholder="Escriba la direccion completa"></textarea></td>
-		</tr>
-		<tr>
-			<td>Género:</td>
-			<td> 
-				<label>Femenino<input type="radio" name="rbt-genero" id="rbt-femenino"></label>&nbsp;&nbsp;&nbsp;
-				<label>Masculino<input type="radio" name="rbt-genero" id="rbt-masculino"></label>
-			</td>
-		</tr>
-		<tr>
-			<td>Titulos:</td>
-			<td>
-				<label>Maestria<input type="checkbox" name="chk_maestria" id="chk_maestria"></label>
-				<label>Pregrado<input type="checkbox" name="chk_pregrado" id="chk_pregrado"></label>
-				<label>Doctorado<input type="checkbox" name="chk_doctorado" id="chk_doctorado"></label>
-				<label>Especializacion<input type="checkbox" name="chk_especializacion" id="chk_especializacion"></label>
-			</td>
-		</tr>
-		<tr>
-			<td>Pais:</td>
-			<td>
-				<select name="slc-pais" id="slc-pais">
-					<option>---Seleccione un país---</option>
-					<option value="1">Honduras</option>
-					<option value="2">Guatemala</option>
-					<option value="3">Panama</option>
-					<option value="4">Costarica</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td>Experiencias:</td>
-			<td>
-				<select name="slc-pais" id="slc-pais" multiple>
-					<option value="1">Liderazgo</option>
-					<option value="2">Productividad</option>
-					<option value="3">Honradez</option>
-					<option value="4">Trabajo en equipo</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td>Fecha de nacimiento: </td>
-			<td><input type="date" name="dt-fecha-nacimiento" id="dt-fecha-nacimiento"></td>
-		</tr>
-		<tr>
-			<td>Email:</td>
-			<td><input type="email" name="txt-email" id="txt-email" placeholder="ejemplo@email.com"></td>
-		</tr>
-		<tr>
-			<td>Password:</td>
-			<td><input type="password" name="txt-password" id="txt-password" placeholder="Password"></td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				<input type="submit" value="Guardar" name="btn-guardar" id="btn-guardar"><!-- Se utiliza para enviar formularios completos, es necesario utilizar la etiqueta <form> -->
-				<input type="button" value="Guardar" name="btn-guardar-2" id="btn-guardar-2"><!-- Se utiliza para agregar acciones o eventos javascript -->
-				<button name="btn-guardar-3" id="btn-guardar-3">Guardar</button><!-- Se utiliza para agregar acciones o eventos javascript -->
-			</td>
-		</tr>
-	</table>
+<body style="color:#ffffff;background-image:url(img/bdz-bg.jpg);background-size: cover;background-attachment: fixed;">
+	<!--
+	Sintaxis de CSS en linea debe ser asi:
+	propiedadCSS1:valor1;propiedadCSS2:valor2 ... propiedadCSS_n:valorN;
+	En el caso de los colores se puede poner en formato RGB o Hexadecimal.
+	Hay otra variacion del RGB que incluye transparencia, este se indica con RGBA
+	El alpha o transparencia es un numero entre 0 y 1 siendo 0 invisible y 1 color solido
+	-->
+	<h1>Registro de personas</h1>
+	<h1>Otro titulo</h1>
+	<p>
+	<div class="cuadro-transparente"><!-- -Div es un contenedor para estructurar porciones grandes -->
+		<span style="color:#000000; background-color:#ffffff;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span> Donec pulvinar, ante at dignissim malesuada, nibh ante vehicula ligula, at vestibulum urna lacus gravida erat. Nulla elementum pulvinar purus, sit amet placerat ex placerat ut. Nunc molestie neque massa, non tristique mi finibus non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum vel facilisis ipsum. Curabitur maximus, metus vitae sagittis varius, magna neque tincidunt purus, a vulputate nisi neque sit amet metus. Vestibulum faucibus, elit a varius viverra, elit augue accumsan sem, et molestie ex sem ac sem. Fusce mattis ante vel est placerat, nec rutrum purus viverra.
+		</p>
+
+		<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar, ante at dignissim malesuada, nibh ante vehicula ligula, at vestibulum urna lacus gravida erat. Nulla elementum pulvinar purus, sit amet placerat ex placerat ut. Nunc molestie neque massa, non tristique mi finibus non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum vel facilisis ipsum. Curabitur maximus, metus vitae sagittis varius, magna neque tincidunt purus, a vulputate nisi neque sit amet metus. Vestibulum faucibus, elit a varius viverra, elit augue accumsan sem, et molestie ex sem ac sem. Fusce mattis ante vel est placerat, nec rutrum purus viverra.
+		</p>
+
+		<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar, ante at dignissim malesuada, nibh ante vehicula ligula, at vestibulum urna lacus gravida erat. Nulla elementum pulvinar purus, sit amet placerat ex placerat ut. Nunc molestie neque massa, non tristique mi finibus non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum vel facilisis ipsum. Curabitur maximus, metus vitae sagittis varius, magna neque tincidunt purus, a vulputate nisi neque sit amet metus. Vestibulum faucibus, elit a varius viverra, elit augue accumsan sem, et molestie ex sem ac sem. Fusce mattis ante vel est placerat, nec rutrum purus viverra.
+		</p>
+		<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar, ante at dignissim malesuada, nibh ante vehicula ligula, at vestibulum urna lacus gravida erat. Nulla elementum pulvinar purus, sit amet placerat ex placerat ut. Nunc molestie neque massa, non tristique mi finibus non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum vel facilisis ipsum. Curabitur maximus, metus vitae sagittis varius, magna neque tincidunt purus, a vulputate nisi neque sit amet metus. Vestibulum faucibus, elit a varius viverra, elit augue accumsan sem, et molestie ex sem ac sem. Fusce mattis ante vel est placerat, nec rutrum purus viverra.
+		</p>
+		<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar, ante at dignissim malesuada, nibh ante vehicula ligula, at vestibulum urna lacus gravida erat. Nulla elementum pulvinar purus, sit amet placerat ex placerat ut. Nunc molestie neque massa, non tristique mi finibus non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum vel facilisis ipsum. Curabitur maximus, metus vitae sagittis varius, magna neque tincidunt purus, a vulputate nisi neque sit amet metus. Vestibulum faucibus, elit a varius viverra, elit augue accumsan sem, et molestie ex sem ac sem. Fusce mattis ante vel est placerat, nec rutrum purus viverra.
+		</p>
+		<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar, ante at dignissim malesuada, nibh ante vehicula ligula, at vestibulum urna lacus gravida erat. Nulla elementum pulvinar purus, sit amet placerat ex placerat ut. Nunc molestie neque massa, non tristique mi finibus non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum vel facilisis ipsum. Curabitur maximus, metus vitae sagittis varius, magna neque tincidunt purus, a vulputate nisi neque sit amet metus. Vestibulum faucibus, elit a varius viverra, elit augue accumsan sem, et molestie ex sem ac sem. Fusce mattis ante vel est placerat, nec rutrum purus viverra.
+		</p>
+		<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar, ante at dignissim malesuada, nibh ante vehicula ligula, at vestibulum urna lacus gravida erat. Nulla elementum pulvinar purus, sit amet placerat ex placerat ut. Nunc molestie neque massa, non tristique mi finibus non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum vel facilisis ipsum. Curabitur maximus, metus vitae sagittis varius, magna neque tincidunt purus, a vulputate nisi neque sit amet metus. Vestibulum faucibus, elit a varius viverra, elit augue accumsan sem, et molestie ex sem ac sem. Fusce mattis ante vel est placerat, nec rutrum purus viverra.
+		</p>
+		<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar, ante at dignissim malesuada, nibh ante vehicula ligula, at vestibulum urna lacus gravida erat. Nulla elementum pulvinar purus, sit amet placerat ex placerat ut. Nunc molestie neque massa, non tristique mi finibus non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum vel facilisis ipsum. Curabitur maximus, metus vitae sagittis varius, magna neque tincidunt purus, a vulputate nisi neque sit amet metus. Vestibulum faucibus, elit a varius viverra, elit augue accumsan sem, et molestie ex sem ac sem. Fusce mattis ante vel est placerat, nec rutrum purus viverra.
+		</p>
+		<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar, ante at dignissim malesuada, nibh ante vehicula ligula, at vestibulum urna lacus gravida erat. Nulla elementum pulvinar purus, sit amet placerat ex placerat ut. Nunc molestie neque massa, non tristique mi finibus non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum vel facilisis ipsum. Curabitur maximus, metus vitae sagittis varius, magna neque tincidunt purus, a vulputate nisi neque sit amet metus. Vestibulum faucibus, elit a varius viverra, elit augue accumsan sem, et molestie ex sem ac sem. Fusce mattis ante vel est placerat, nec rutrum purus viverra.
+		</p>
+	</div>
+	<div id = "div-formulario">
+		<form action="">
+			<table>
+				<tr>
+					<td>Codigo:</td>
+					<td><input type="text" name="txt-codigo" id="txt-codigo" size="10" disabled="disabled" value="37"></td>
+				</tr>
+				<tr>
+					<td>Nombre:</td>
+					<td><input type="text" name="txt-nombre" id="txt-nombre" size="10" placeholder="Ejem. Juan" required></td>
+				</tr>
+				<tr>
+					<td>Apellido:</td>
+					<td><input type="text" name="txt-apellido" id="txt-apellido" size="10" placeholder="Ejem. Perez"></td>
+				</tr>
+				<tr>
+					<td>Dirección:</td>
+					<td><textarea name="txta-direccion" id="txta-direccion" placeholder="Escriba la direccion completa"></textarea></td>
+				</tr>
+				<tr>
+					<td>Género:</td>
+					<td> 
+						<label>Femenino<input type="radio" name="rbt-genero" id="rbt-femenino"></label>&nbsp;&nbsp;&nbsp;
+						<label>Masculino<input type="radio" name="rbt-genero" id="rbt-masculino"></label>
+					</td>
+				</tr>
+				<tr>
+					<td>Titulos:</td>
+					<td>
+						<label>Maestria<input type="checkbox" name="chk_maestria" id="chk_maestria"></label>
+						<label>Pregrado<input type="checkbox" name="chk_pregrado" id="chk_pregrado"></label>
+						<label>Doctorado<input type="checkbox" name="chk_doctorado" id="chk_doctorado"></label>
+						<label>Especializacion<input type="checkbox" name="chk_especializacion" id="chk_especializacion"></label>
+					</td>
+				</tr>
+				<tr>
+					<td>Pais:</td>
+					<td>
+						<select name="slc-pais" id="slc-pais">
+							<option>---Seleccione un país---</option>
+							<option value="1">Honduras</option>
+							<option value="2">Guatemala</option>
+							<option value="3">Panama</option>
+							<option value="4">Costarica</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Experiencias:</td>
+					<td>
+						<select name="slc-aptitudes" id="slc-aptitudes" multiple>
+							<option value="1">Liderazgo</option>
+							<option value="2">Productividad</option>
+							<option value="3">Honradez</option>
+							<option value="4">Trabajo en equipo</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Fecha de nacimiento: </td>
+					<td><input type="date" name="dt-fecha-nacimiento" id="dt-fecha-nacimiento"></td>
+				</tr>
+				<tr>
+					<td>Color Favorito:</td>
+					<td><input type="color" name="txt-color" id="txt-color"></td>
+				</tr>
+				<tr>
+					<td>Edad:</td>
+					<td><input type="number" name="txt-edad" id="txt-edad" min="1" max="150"></td>
+				</tr>
+				<tr>
+					<td>Capacidad:</td>
+					<td><input type="range" name="txt-capacidad" id="txt-capacidad"></td>
+				</tr>
+				<tr>
+					<td>URL:</td>
+					<td><input type="url" name="txt-url" id="txt-url" placeholder="http://ejemplo.com"></td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><input type="email" name="txt-email" id="txt-email" placeholder="ejemplo@email.com"></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" name="txt-password" id="txt-password" placeholder="Password"></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit" value="Guardar" name="btn-guardar" id="btn-guardar"><!-- Se utiliza para enviar formularios completos, es necesario utilizar la etiqueta <form> -->
+						<input type="button" value="Guardar" name="btn-guardar-2" id="btn-guardar-2"><!-- Se utiliza para agregar acciones o eventos javascript -->
+						<button name="btn-guardar-3" id="btn-guardar-3">Guardar</button><!-- Se utiliza para agregar acciones o eventos javascript -->
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
 	<ul> 
 		<li><a href="http://google.hn">OpcionMenu1</a></li>
 		<li><a href="http://google.hn">OpcionMenu2</a></li>
