@@ -4,6 +4,7 @@
 	<title>Ejemplo Formulario</title>
 	<!--Usar fuentes de Google, para ello hay que incluir esta etiqueta link en la etiqueta head-->
 	<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+	<link rel="stylesheet" href="css/bootstrap.min.css"> 
 	<link rel="stylesheet" href="css/estilos.css">
 	<style>
 		/* Este es un comentario CSS */
@@ -108,7 +109,7 @@
 	</div>
 	<div id = "div-formulario">
 		<form action="">
-			<table>
+			<table class="table">
 				<tr>
 					<td>Codigo:</td>
 					<td><input type="text" name="txt-codigo" id="txt-codigo" size="10" disabled="disabled" value="37"></td>
@@ -194,9 +195,13 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-						<input type="submit" value="Guardar" name="btn-guardar" id="btn-guardar"><!-- Se utiliza para enviar formularios completos, es necesario utilizar la etiqueta <form> -->
-						<input type="button" value="Guardar" name="btn-guardar-2" id="btn-guardar-2"><!-- Se utiliza para agregar acciones o eventos javascript -->
-						<button name="btn-guardar-3" id="btn-guardar-3">Guardar</button><!-- Se utiliza para agregar acciones o eventos javascript -->
+						<input class="btn btn-primary" type="submit" value="Guardar" name="btn-guardar" id="btn-guardar"><!-- Se utiliza para enviar formularios completos, es necesario utilizar la etiqueta <form> -->
+						<input class="btn btn-primary" type="button" value="Guardar" name="btn-guardar-2" id="btn-guardar-2" disabled="disabled"><!-- Se utiliza para agregar acciones o eventos javascript -->
+						<button class="btn btn-primary" name="btn-guardar-3" id="btn-guardar-3">Guardar</button><!-- Se utiliza para agregar acciones o eventos javascript -->
+						<br>
+						<button type="button" class="btn btn-primary btn-lg">
+						  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
+						</button>
 					</td>
 				</tr>
 			</table>

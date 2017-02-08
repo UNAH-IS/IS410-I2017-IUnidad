@@ -1,0 +1,16 @@
+.texto-rojo{
+	color:#ff0000;
+	background-color: #000000;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #8c301f;
+    border-color: #cf452f;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #4A1005;
+    border-color: #cf452f;
+}
