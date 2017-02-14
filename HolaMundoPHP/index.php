@@ -1,5 +1,7 @@
 <?php
-	$nombre = "Juan";	
+	$nombre = "Juan";
+
+	
  ?>
 <!DOCTYPE html>
 <html>
@@ -10,6 +12,9 @@
 	</style>
 </head>
 <body>
+	<?php 
+		include("menu.html");
+	?>
 	<!-- -->
 
 	<?php
@@ -54,7 +59,20 @@
 				<option value="valor">Valor a mostrar</option>
 			</select>
 		*/	
-		echo '<br><br><br><br><select>';
+		$resultado = generarListaPaises("slc-paises");
+		echo $resultado;
+		generarListaPaises("slc-paises1");
+		generarListaPaises("slc-paises2");
+		generarListaPaises("slc-paises3");
+		generarListaPaises("slc-paises4");
+	?>
+</body>
+</html>
+
+<?php 
+
+	function generarListaPaises($idSelect){
+		echo '<br><br><br><br><select id="'.$idSelect.'">';
 		//$valores = array();
 		$valores[]="Honduras";
 		$valores[]="Guatemala";
@@ -68,10 +86,7 @@
 			echo '<option value="'.$i.'">'.$valores[$i].'</option>'."\n";
 		}
 		echo '</select>';
-	?>
-</body>
-</html>
-
-<?php 
+		return "Se genero el select";
+	}
 
 ?>
