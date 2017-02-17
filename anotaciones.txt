@@ -1,0 +1,22 @@
+Constructores:
+*Es un metodo o funcion
+*Se ejecuta al momento de crear una instancia, es decir es el primer metodo en ejecutarse.
+*Se utiliza usualmente para inicializar atributos internos o inicializar otros objetos.
+*Obligatoriamente tiene que ser publico
+*Un constructor en PHP debe tener el siguiente nombre
+	public function __construct(){}
+
+Java:
+	public NombreClase(){}
+
+En Java un constructor no tiene tipo de dato de retorno, inclusive void.
+Si no se define un constructor, se crea automaticamente uno vacio.
+
+Composición:
+Es utilizar para un atributo un tipo de dato referenciado, es decir utilizar una clase previamente creada como tipo de dato, en PHP no se definen los tipos de datos de cada atributo, asi que es en el proceso de instanciacion donde se debe enviar el objeto para el atributo que tendra el tipo de dato referenciado.
+
+Modificador static:
+Permite acceder a un atributo o metodo sin crear una instancia. Esto se hace a traves del nombre de la clase.
+
+PHP
+	NombreClase::nombreAtributoEstatico;

@@ -13,7 +13,14 @@
 </head>
 <body>
 	<?php 
-		include("menu.html");
+		include_once("menu.html");
+		include_once("menu.html");
+		include_once("menu.html");
+		include_once("menu.html");
+		include_once("menu.html");
+		include_once("menu.html");
+		include_once("menu.html");
+
 	?>
 	<!-- -->
 
