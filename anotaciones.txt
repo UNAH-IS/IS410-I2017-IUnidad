@@ -20,3 +20,24 @@ Permite acceder a un atributo o metodo sin crear una instancia. Esto se hace a t
 
 PHP
 	NombreClase::nombreAtributoEstatico;
+
+Los atributos estaticos conservan el mismo valor para todos los objetos.
+Para acceder a un atributo estatico desde la propia clase se usa self::$nombreAtributoEstatico
+
+
+Pilares de la Programacion Orientada a Objetos:
+Encapsulacion: Definir atributos privados y acceder a ellos mediante metodos publicos, esto se hace para proteger los atributos de modificaciones involuntarias. A los metodos para acceder o asignar valores se los conoce como los metodos set y get.
+
+Abstraccion
+Es utilizar alguna funcionalidad sin necesidad de saber como esta estructurada internamente.
+
+Herencia
+Es la funcionalidad que permite reutilizar codigo definiendo una nueva clase que encapsule atributos y metodos en comun de varias clases. A la nueva clase se le llamara clase padre, super clase o clase base, y a las clases que hereden de esta se les llamara clase hija, sub clase o clase derivada.
+Generalmente los atributos de la clase padre se definen con el modificador de acceso protected, este es similar al modificar private con la salvedad de que permite que sean accedidos desde clases hijas.
+
+-Sobreescritura de metodos: Volver a escribir un metodo en una clase hija que estaba previamente defido en su clase padre. Si se necesita llamar al metodo padre desde el metodo sobreescrito en la clase hija se debe utilizar parent::nombreMetodo()
+
+-instanceof: operador logico que sirve para verificar si un objeto es instancia de una clase.
+	Sintaxis (PHP y Java): $objeto instanceof NombreClase.
+
+Polimorfismo

@@ -66,6 +66,16 @@
 		echo "<hr>";
 		echo $p;*/
 		//$a->imprimirNombre();
+		echo '<select id= "" name="">';
+		for ($i=0;$i<sizeof($personas);$i++){
+			echo '<option value="'.$personas[$i]->getNombre().'">'.$personas[$i]->getNombre().'</option>';
+		}
+		echo '</select>';
+
+
+		for ($i=0;$i<sizeof($personas);$i++){
+			echo '<label><input type="checkbox" value="'.$personas[$i]->getNombre().'">'.$personas[$i]->getNombre().'</label>';
+		}
 	?>
 </body>
 </html>
