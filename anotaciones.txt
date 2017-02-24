@@ -40,4 +40,22 @@ Generalmente los atributos de la clase padre se definen con el modificador de ac
 -instanceof: operador logico que sirve para verificar si un objeto es instancia de una clase.
 	Sintaxis (PHP y Java): $objeto instanceof NombreClase.
 
+-Clases Abstractas:
+	Son clases que generalmente se utilizan como clase base o clase padre en herencia, son clases genericas y se rigen por las siguientes reglas:
+	-No se pueden instanciar.
+	-A pesar de que no se pueden instanciar si pueden tener constructor.
+	-Una clase abstracta puede tener o no metodos abstractos.
+	-Si hay al menos un metodo abstracto la clase debe ser abstracta.
+	-Un metodo abstracto no tiene cuerpo solo se define y este debe ser sobreescrito obligatroriamente en clases hijas.
+
+-Interfaces(interface): Son  estructuras de datos similares a una clase, se les conoce tambien como clase abstracta pura y debe cumplir con las siguientes reglas:
+	-Se utiliza la palabra reservada interface en vez de class.
+	-No se puede instanciar.
+	-No tiene constructor.
+	-Todos sus atributos son constantes estaticas.
+	-Todos los metodos son abstractos.
+	-Se puede aplicar herencia teniendo como padre una o varias interfaces, para ello se debe utilizar implements cuando una clase hereda de una interfaz y extends cuando se aplique herencia entre interfaces.
+	-Los atributos y metodos deben ser public.
+
+
 Polimorfismo

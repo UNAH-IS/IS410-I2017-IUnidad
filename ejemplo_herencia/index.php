@@ -22,25 +22,25 @@
 		$m3 = new Maestro("Juan3","Rodriguez",60,"12-12-2012","10125454545","M","Ing en Sistemas","Col Kennedy",
 			"9999999","juan@gmail.com","La Paz",2342,34535.34534);
 
-		$p1 = new Persona("Maria1","Lainez",50,"12-12-2012","10125454545","M","Ing en Sistemas","Col Kennedy",
+		/*$p1 = new Persona("Maria1","Lainez",50,"12-12-2012","10125454545","M","Ing en Sistemas","Col Kennedy",
 			"9999999","juan@gmail.com","La Paz");
 		$p2 = new Persona("Maria2","Lainez",50,"12-12-2012","10125454545","M","Ing en Sistemas","Col Kennedy",
 			"9999999","juan@gmail.com","La Paz");
 		$p3 = new Persona("Maria3","Lainez",50,"12-12-2012","10125454545","M","Ing en Sistemas","Col Kennedy",
-			"9999999","juan@gmail.com","La Paz");
+			"9999999","juan@gmail.com","La Paz");*/
 
 		//$a->setNombre("ElBrayan");
 		//echo "Cuenta: " . $a->getCuenta();
 		$personas = array();
 		$personas[]=$a1;
 		$personas[]=$m1;
-		$personas[]=$p3;
+		//$personas[]=$p3;
 		$personas[]=$a2;
 		$personas[]=$a3;
-		$personas[]=$p1;
+		//$personas[]=$p1;
 		$personas[]=$m2;
 		$personas[]=$m3;
-		$personas[]=$p2;
+		//$personas[]=$p2;
 		
 
 		echo "<h1>Maestros</h1>";

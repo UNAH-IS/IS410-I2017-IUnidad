@@ -23,9 +23,18 @@
   <body>
     <?php
         $email="";
+        $password="";
         if(isset($_POST["input-email"])){
           $email =  $_POST["input-email"];
-          echo $email;
+        }
+        if(isset($_POST["input-password"])){
+          $password =  $_POST["input-password"];
+        }
+
+        if (isset($_POST["input-email"]) && isset($_POST["input-password"])){
+          $archivo = fopen("usuarios.txt","a+");
+          fwrite($archivo, $_POST["input-email"] . "," . $_POST["input-password"]."\n");
+          fclose($archivo);
         }
      ?>
     <div class="container">
@@ -35,7 +44,7 @@
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="text" id="input-email" name="input-email" class="form-control" placeholder="Email address" required autofocus value="<?php echo $email; ?>">
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="input-password" name="input-password" class="form-control" placeholder="Password" required>
+        <input type="password" id="input-password" name="input-password" class="form-control" placeholder="Password" required value="<?php echo $password;?>">
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me

@@ -51,5 +51,9 @@
 			return parent::__toString()." NumeroEmpleado: " . $this->numeroEmpleado . 
 				" Sueldo: " . $this->sueldo;
 		}
+
+		public function metodoAbstracto(){
+			echo "Este es un metodo abstracto sobreescrito en la clase Maestro";
+		}
 	}
 ?>

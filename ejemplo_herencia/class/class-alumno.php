@@ -43,5 +43,10 @@
 		public function imprimirNombre(){
 			echo $this->nombre;
 		}
+
+
+		public function metodoAbstracto(){
+			echo "Este es un metodo abstracto sobreescrito en la clase Alumno";
+		}
 	}
 ?>

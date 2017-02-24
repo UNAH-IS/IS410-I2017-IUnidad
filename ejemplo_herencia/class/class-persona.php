@@ -1,6 +1,6 @@
 <?php
 
-	class Persona{
+	abstract class Persona{
 		protected $nombre;
 		protected $apellido;
 		protected $edad;
@@ -116,5 +116,7 @@
 				" Correo: " . $this->correo . 
 				" LugarNacimiento: " . $this->lugarNacimiento;
 		}
+
+		public abstract function metodoAbstracto();
 	}
 ?>
