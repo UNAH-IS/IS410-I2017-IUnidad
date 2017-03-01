@@ -52,6 +52,7 @@
         </div>
         <!--button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button-->
         <input type= "submit" class="btn btn-lg btn-primary btn-block" value="Ingresar">
+        <input type= "reset" class="btn btn-lg btn-primary btn-block" value="Limpiar">
       </form>
 
     </div> <!-- /container -->
