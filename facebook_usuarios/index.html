@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Facebook</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/jumbotron.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Facebook!</h1>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-12 col-sm-6 col-md-6 col-lg-6">
+          <h2>Usuario reciente</h2>
+          <p></p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <h2>Crea una cuenta</h2>
+          <h4>Es gratis y lo sera siempre</h4>
+          <form action="index.php" method="GET">
+              <table class="formulario">
+                  <tr>
+                    <td><input type="text" name="txt-nombre" class="form-control" placeholder="Nombre"></td>
+                    <td><input type="text" name="txt-apellido" class="form-control" placeholder="Apellido"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><input type="text" name="txt-correo" class="form-control" placeholder="Correo electronico"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><input type="text" name="txt-telefono" class="form-control" placeholder="Numero telefonico"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><input type="password" name="txt-contrasena" class="form-control" placeholder="Contraseña"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><input type="password" name="txt-contrasena-confirm" class="form-control" placeholder="Confirmar contraseña"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <label for="txt-fecha-nacimiento">Fecha nacimiento:</label> <input type="date" name="txt-fecha-nacimiento" class="form-control" placeholder="Fecha nacimiento"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                        <label>Genero:</label> 
+                        <label><input type="radio" name="rbt-genera" value="Femenino">Femenino</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label><input type="radio" name="rbt-genera" value="Masculino">Masculino</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <select name="slc-pais">
+                          <option>--País--</option>
+                          <option value="1">Honduras</option>
+                          <option value="2">Nicaragua</option>
+                          <option value="3">El Salvador</option>
+                          <option value="4">Costarica</option>
+                      </select>  
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <label>Gustos:</label>
+                      <label><input type="checkbox" value="1">Arroz chino</label>
+                      <label><input type="checkbox" value="2">Chicas</label>
+                      <label><input type="checkbox" value="3">Chicos</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <input type="submit" name="btn-registrar" value="Crear cuenta" class="btn btn-primary">
+                    </td>
+                  </tr>
+              </table>            
+          </form>
+       </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2016 Company, Inc.</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>
