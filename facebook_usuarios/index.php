@@ -1,3 +1,45 @@
+<?php
+  $nombre="";
+  $apellido="";
+  $correo="";
+  $contrasena="";
+  $confirmacionContrasena="";
+  $telefono="";
+  $fechaNacimiento="";
+  $genero="";
+  $pais="";
+  $arregloGustos=array();
+
+  if (isset($_GET["txt-nombre"]))
+    $nombre = $_GET["txt-nombre"];
+
+  if (isset($_GET["txt-apellido"]))
+    $apellido = $_GET["txt-apellido"];
+
+  if (isset($_GET["txt-correo"]))
+    $correo = $_GET["txt-correo"];
+
+  if (isset($_GET["txt-contrasena"]))
+    $contrasena = $_GET["txt-contrasena"];
+
+  if (isset($_GET["txt-confirmacion-contrasena"]))
+    $confirmacionContrasena = $_GET["txt-confirmacion-contrasena"];
+
+  if (isset($_GET["txt-fecha-nacimiento"]))
+    $fechaNacimiento = $_GET["txt-fecha-nacimiento"];
+
+  if (isset($_GET["txt-telefono"]))
+    $telefono = $_GET["txt-telefono"];
+
+  if (isset($_GET["slc-pais"]))
+    $pais = $_GET["slc-pais"];
+
+  if (isset($_GET["rbt-genero"]))
+    $genero = $_GET["rbt-genero"];
+
+  if (isset($_GET["chk-gustos"]))
+     $arregloGustos = $_GET["chk-gustos"];
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -72,49 +114,51 @@
           <form action="index.php" method="GET">
               <table class="formulario">
                   <tr>
-                    <td><input type="text" name="txt-nombre" class="form-control" placeholder="Nombre"></td>
-                    <td><input type="text" name="txt-apellido" class="form-control" placeholder="Apellido"></td>
+                    <td <?php if ($nombre=="") echo 'class="has-error"'; ?> ><input type="text" name="txt-nombre" class="form-control" placeholder="Nombre" value="<?php echo $nombre; ?>"></td>
+                    <td <?php if ($apellido=="") echo 'class="has-error"'; ?>><input type="text" name="txt-apellido" class="form-control" placeholder="Apellido" value="<?php echo $apellido; ?>"></td>
                   </tr>
                   <tr>
-                    <td colspan="2"><input type="text" name="txt-correo" class="form-control" placeholder="Correo electronico"></td>
+                    <td colspan="2"><input type="text" name="txt-correo" class="form-control" placeholder="Correo electronico" value="<?php echo $correo; ?>"></td>
                   </tr>
                   <tr>
-                    <td colspan="2"><input type="text" name="txt-telefono" class="form-control" placeholder="Numero telefonico"></td>
+                    <td colspan="2"><input type="text" name="txt-telefono" class="form-control" placeholder="Numero telefonico" value="<?php echo $telefono; ?>"></td>
                   </tr>
                   <tr>
                     <td colspan="2"><input type="password" name="txt-contrasena" class="form-control" placeholder="Contraseña"></td>
                   </tr>
                   <tr>
-                    <td colspan="2"><input type="password" name="txt-contrasena-confirm" class="form-control" placeholder="Confirmar contraseña"></td>
+                    <td colspan="2"><input type="password" name="txt-confirmacion-contrasena" class="form-control" placeholder="Confirmar contraseña"></td>
                   </tr>
                   <tr>
                     <td colspan="2">
-                      <label for="txt-fecha-nacimiento">Fecha nacimiento:</label> <input type="date" name="txt-fecha-nacimiento" class="form-control" placeholder="Fecha nacimiento"></td>
+                      <label for="txt-fecha-nacimiento">Fecha nacimiento:</label> <input type="date" name="txt-fecha-nacimiento" class="form-control" placeholder="Fecha nacimiento" value="<?php echo $fechaNacimiento; ?>"></td>
                   </tr>
                   <tr>
                     <td colspan="2">
+                    <!--Para seleccionar por defecto un checkbox o radioboton utiliza la propiedad checked-->
+                    <!--En el caso de los select utiliza la propiedad selected-->
                         <label>Genero:</label> 
-                        <label><input type="radio" name="rbt-genera" value="Femenino">Femenino</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="radio" name="rbt-genera" value="Masculino">Masculino</label>
+                        <label><input type="radio" name="rbt-genero" value="Femenino" <?php if ($genero =="Femenino") echo "checked"; ?>>Femenino</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label><input type="radio" name="rbt-genero" value="Masculino" <?php if ($genero =="Masculino") echo "checked"; ?>>Masculino</label>
                     </td>
                   </tr>
                   <tr>
                     <td colspan="2">
-                      <select name="slc-pais">
+                      <select name="slc-pais" class="form-control">
                           <option>--País--</option>
-                          <option value="1">Honduras</option>
-                          <option value="2">Nicaragua</option>
-                          <option value="3">El Salvador</option>
-                          <option value="4">Costarica</option>
+                          <option value="1" <?php if ($pais==1) echo "selected"; ?>>Honduras</option>
+                          <option value="2" <?php if ($pais==2) echo "selected"; ?>>Nicaragua</option>
+                          <option value="3" <?php if ($pais==3) echo "selected"; ?>>El Salvador</option>
+                          <option value="4" <?php if ($pais==4) echo "selected"; ?>>Costarica</option>
                       </select>  
                     </td>
                   </tr>
                   <tr>
                     <td colspan="2">
                       <label>Gustos:</label>
-                      <label><input type="checkbox" value="1">Arroz chino</label>
-                      <label><input type="checkbox" value="2">Chicas</label>
-                      <label><input type="checkbox" value="3">Chicos</label>
+                      <label><input type="checkbox" value="1" name="chk-gustos[]" <?php if (in_array("1",$arregloGustos)) echo "checked";?> >Arroz chino</label>
+                      <label><input type="checkbox" value="2" name="chk-gustos[]" <?php if (in_array("2",$arregloGustos)) echo "checked";?> >Chicas</label>
+                      <label><input type="checkbox" value="3" name="chk-gustos[]" <?php if (in_array("3",$arregloGustos)) echo "checked";?> >Chicos</label>
                     </td>
                   </tr>
                   <tr>
