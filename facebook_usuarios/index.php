@@ -1,4 +1,6 @@
 <?php
+  include_once("class/class-usuario.php");
+  include_once("class/class-pais.php");
   $nombre="";
   $apellido="";
   $correo="";
@@ -9,6 +11,7 @@
   $genero="";
   $pais="";
   $arregloGustos=array();
+  $foto="";
 
   if (isset($_GET["txt-nombre"]))
     $nombre = $_GET["txt-nombre"];
@@ -39,6 +42,63 @@
 
   if (isset($_GET["chk-gustos"]))
      $arregloGustos = $_GET["chk-gustos"];
+
+   if (isset($_GET["rbt-foto"]))
+     $foto = $_GET["rbt-foto"];
+
+   if (isset($_GET["btn-registrar"])){
+      //include_once("class/class-pais.php");
+      $u = new Usuario($nombre,
+          $apellido,
+          $correo,
+          $telefono,
+          $contrasena,
+          $fechaNacimiento,
+          $genero,
+          $pais,
+          $arregloGustos,
+          $foto);
+
+      $u->guardarRegistro();
+
+   }
+
+   $archivo = fopen("data/usuarios.csv","r") or die("No se pudo abrir el archivo :(");
+    // Output one line until end-of-file
+    $usuarios = array();
+    $partes = array();
+    while(!feof($archivo)) {
+      $linea = fgets($archivo);
+      $partes = explode(",",$linea);
+      if (sizeof($partes)>1){
+        $usuarios[] = new Usuario(
+            $partes[0],
+            $partes[1],
+            $partes[2],
+            $partes[3],
+            $partes[4],
+            $partes[5],
+            $partes[6],
+            $partes[7],
+            $partes[8],
+            $partes[9]
+        );
+      }
+    }
+    fclose($archivo);
+
+    /*for ($i=0; $i <sizeof($usuarios) ; $i++) { 
+        echo $usuarios[$i];
+    }*/
+
+    $paises = array();
+    $paises[] = new Pais(1, "Honduras");
+    $paises[] = new Pais(2, "Nicaragua");
+    $paises[] = new Pais(3, "El Salvador");
+    $paises[] = new Pais(4, "Panama");
+    $paises[] = new Pais(6, "Guatemala");
+    $paises[] = new Pais(7, "Belice");
+    $paises[] = new Pais(8, "Mexico");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -103,9 +163,21 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-md-12 col-sm-6 col-md-6 col-lg-6">
-          <h2>Usuario reciente</h2>
-          <p></p>
+        <div class="col-md-12 col-sm-6 col-md-6 col-lg-6 hidden-xs">
+          <h2>Usuarios guardados</h2>
+          <p>
+            <div class="container-fluid well">
+              <div class="row">
+                <?php
+                  for ($i=0; $i <sizeof($usuarios) ; $i++) { 
+                      echo  '<div class="col-lg-3">'.
+                            '<img src = "'.$usuarios[$i]->getFoto().'" title="'.$usuarios[$i]->getNombre().'">'.
+                            '</div>';
+                  }
+                ?>
+              </div>
+            </div>
+          </p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -146,10 +218,28 @@
                     <td colspan="2">
                       <select name="slc-pais" class="form-control">
                           <option>--País--</option>
-                          <option value="1" <?php if ($pais==1) echo "selected"; ?>>Honduras</option>
-                          <option value="2" <?php if ($pais==2) echo "selected"; ?>>Nicaragua</option>
-                          <option value="3" <?php if ($pais==3) echo "selected"; ?>>El Salvador</option>
-                          <option value="4" <?php if ($pais==4) echo "selected"; ?>>Costarica</option>
+                          <?php
+                            for ($i=0; $i <sizeof($paises) ; $i++) {
+                                /*if ($paises[$i]->getCodigoPais()==$pais)
+                                  echo '<option selected value="'.$paises[$i]->getCodigoPais().'">'.$paises[$i]->getNombrePais().'</option>';
+                                else 
+                                  echo '<option value="'.$paises[$i]->getCodigoPais().'">'.$paises[$i]->getNombrePais().'</option>';*/
+
+                                  echo '<option '. (($paises[$i]->getCodigoPais()==$pais)?"selected":"") .' value="'.$paises[$i]->getCodigoPais().'">'.$paises[$i]->getNombrePais().'</option>';
+                            }
+
+
+                      
+
+                            
+
+                            /*
+                              <option value="1" <?php if ($pais==1) echo "selected"; ?>>Honduras</option>
+                              <option value="2" <?php if ($pais==2) echo "selected"; ?>>Nicaragua</option>
+                              <option value="3" <?php if ($pais==3) echo "selected"; ?>>El Salvador</option>
+                              <option value="4" <?php if ($pais==4) echo "selected"; ?>>Costarica</option>
+                            */
+                          ?>                          
                       </select>  
                     </td>
                   </tr>
@@ -159,6 +249,15 @@
                       <label><input type="checkbox" value="1" name="chk-gustos[]" <?php if (in_array("1",$arregloGustos)) echo "checked";?> >Arroz chino</label>
                       <label><input type="checkbox" value="2" name="chk-gustos[]" <?php if (in_array("2",$arregloGustos)) echo "checked";?> >Chicas</label>
                       <label><input type="checkbox" value="3" name="chk-gustos[]" <?php if (in_array("3",$arregloGustos)) echo "checked";?> >Chicos</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <label>Foto:</label>
+                      <label><input type="radio" value="img/goku.jpg" name="rbt-foto" <?php if ($foto == "img/goku.jpg") echo "checked"; ?> ><img src="img/goku.jpg" class="img-responsive img-circle"></label>
+                      <label><input type="radio" value="img/gohan.jpg" name="rbt-foto" <?php if ($foto == "img/gohan.jpg") echo "checked"; ?> ><img src="img/gohan.jpg" class="img-responsive img-circle"></label>
+                      <label><input type="radio" value="img/trunks.jpg" name="rbt-foto" <?php if ($foto == "img/trunks.jpg") echo "checked"; ?> ><img src="img/trunks.jpg" class="img-responsive img-circle"></label>
+                      <label><input type="radio" value="img/vegeta.jpg" name="rbt-foto" <?php if ($foto == "img/vegeta.jpg") echo "checked"; ?> ><img src="img/vegeta.jpg" class="img-responsive img-circle"></label>
                     </td>
                   </tr>
                   <tr>
